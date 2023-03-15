@@ -1,0 +1,205 @@
+/*Sanchez font*/
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+
+/*For now make everything have the Sanchez font-family*/
+* {
+  font-family: 'Sanchez', serif;
+}
+
+/*Give the website a Yellow Pearl background color and remove whitespace around the page*/
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #ECE0C4;
+}
+
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_layout_named*/
+
+/*Giving grid area names to the sections in home page*/
+header         { grid-area: header; }
+#home-section1 { grid-area: hsec1;  }
+#home-section2 { grid-area: hsec2;  }
+#home-section3 { grid-area: hsec3;  }
+footer         { grid-area: footer; }
+
+/*Home page will be a grid made of five 
+rows and one column (at first glance)*/
+.home-page {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'hsec1'
+    'hsec2'
+    'hsec3'
+    'footer';
+}
+
+/*Header and footer will have a top and bottom border*/
+header, footer {
+  border-top: solid;
+  border-bottom: solid;
+}
+
+/*Header will be fixed to the top of the webpage*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/*First home section will have a bottom border and a 
+top margin that is equivalent to the height of the 
+header because fixing the header to the top disrupted
+the flow of the document*/
+#home-section1 {
+  border-bottom: solid;
+  margin-top: 10vh;
+}
+
+/*Second home section will have a bottom border and
+be a grid of two columns and one row*/
+#home-section2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  border-bottom: solid;
+}
+
+/*The title div will have a left and right border*/
+#title {
+  border-left: solid;
+  border-right: solid;
+}
+
+/*The vertical ellipsis will be centered*/
+#vertical-ellipsis {
+  text-align: center;
+}
+
+/*https://stackoverflow.com/questions/2573544/how-can-i-select-all-children-of-an-element-except-the-last-child*/
+/*The last h1 element in the first home section will be aligned to the right*/
+#home-section1 h1:last-child {
+  text-align: right;
+}
+
+/*The logo will have a height equivalent to that of the header*/
+#logo img {
+  height: 10vh;
+}
+
+/*The footer will have a height 20% the height of the viewport*/
+footer {
+  height: 20vh;
+}
+
+/*The title will have no margin*/
+#title h1 {
+  margin: 0;
+}
+
+/*All h1 elements will be large and dynamically sized*/
+h1 {
+  font-size: 2.35vw;
+}
+
+/*The header will be a grid of three columns and 
+one row (which should be 10% the height of the 
+viewport) and will have a Yellow Pearl background*/
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 10vh;
+
+  background-color: #ECE0C4;
+}
+
+/*The self introduction div will have a right border*/
+#self-intro {
+  border-right: solid;
+}
+
+/*The last paragraph of the self introduction, portfolio 
+introduction, and third home page section will have a 
+larger bottom margin to match the top margin of the h1
+elements they contain at the top*/
+#self-intro p:last-child, #portfolio-intro p:last-child, #home-section3 p:last-child {
+  margin-bottom: 1.9em;
+}
+
+/*The first div in the second home page section will have
+right padding to match the section's left padding*/
+#home-section2 div:first-child {
+  padding-right: 10vw;
+}
+
+/*The last div in the second home page section will have
+left padding to match the section's right padding*/
+#home-section2 div:last-child {
+  padding-left: 10vw;
+}
+
+/*The h1 elements in the second and third 
+home page sections will be centered*/
+#home-section2 h1, #home-section3 h1 {
+  text-align: center;
+}
+
+/*The logo, title, navbar, footer, and skills div
+will have their content vertically and horizontally
+centered*/
+#logo, #title, nav, footer, #skills p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*The last paragraph in the skills div will have its
+default bottom margin which was previously overriden
+by the `#portfolio-intro p:last-child` rule*/
+#skills p:last-child {
+  margin-bottom: 1em;
+}
+
+/*The footer and second & third home page sections'
+paragraphs will have a small font size and be 
+dynamically sized*/
+footer, #home-section2 p, #home-section3 p {
+  font-size: 1.18vw;
+}
+
+/*The links in the header and footer 
+will be black and not be underlined*/
+header a, footer a {
+  color: black;
+  text-decoration: none;
+}
+
+/*The navigation link will have a fairly 
+large size and be dynamically sized*/
+nav h2 {
+  font-size: 1.75vw;
+}
+
+/*The first and second home page sections 
+will have padding on their left and right
+of 10% of the viewport's width each*/
+#home-section1, #home-section2 {
+  padding: 0 10vw;
+}
+
+/*The third home page section will have 
+padding on its left and right of 30% of
+the viewport's width each*/
+#home-section3 {
+  padding: 0 30vw;
+}
+
+/*The skills div will be a grid of three
+columns and three rows*/
+#skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
