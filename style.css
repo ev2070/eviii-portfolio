@@ -34,10 +34,11 @@ rows and one column (at first glance)*/
     'footer';
 }
 
-/*Header and footer will have a top and bottom border*/
+/*Header and footer will have a top and bottom pink-red border*/
 header, footer {
   border-top: solid;
   border-bottom: solid;
+  border-color: #FF3D5C;
 }
 
 /*Header will be fixed to the top of the webpage*/
@@ -48,34 +49,73 @@ header {
   right: 0;
 }
 
-/*First home section will have a bottom border and a 
-top margin that is equivalent to the height of the 
-header because fixing the header to the top disrupted
-the flow of the document*/
+/*The first section on the home page (after the header)
+will take up the remaining space of the viewport. It 
+will have an illustration as a background which will 
+take up a little more than half of the size of the 
+container and be centered with no repetitions. This
+container will also be a flex box and have it children
+flow in a centered column direction with space in 
+between them */
 #home-section1 {
+  height: 90vh;
+
+  background-image: url("images/eviii-landing-border.png");
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*The first home section's h1 elements will take
+up 100% of the width of the section and have a 
+subtle background color to distinguish them from 
+the background illustration. They will also have 
+some padding for their respective borders*/
+#home-section1 h1 {
+  width: 100%;
+  background-color: rgba(236, 224, 196, 0.8);
+  padding: 1vh 6vw;
+}
+
+/*The first h1 in the first home section will 
+have a pink-red bottom border*/
+#home-section1 h1:first-of-type {
   border-bottom: solid;
+  border-color: #FF3D5C;
+}
+
+/*The second h1 in the first home section
+will have a pink-red top border*/
+#home-section1 h1:last-of-type {
+  border-top: solid;
+  border-color: #FF3D5C;
+}
+
+/*First home section and container of project cards 
+will have a pink-red bottom border and a top margin 
+that is equivalent to the height of the header because 
+fixing the header to the top disrupted the flow of 
+the document*/
+#home-section1, #project-cards {
+  border-bottom: solid;
+  border-color: #FF3D5C;
   margin-top: 10vh;
 }
 
-/*Second home section will have a bottom border and
-be a grid of two columns and one row*/
+/*Second home section will have a pink-red bottom 
+border and be a grid of two columns and one row*/
 #home-section2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 
   border-bottom: solid;
-}
-
-/*The title div will have a left and right border*/
-#title {
-  border-left: solid;
-  border-right: solid;
-}
-
-/*The vertical ellipsis will be centered*/
-#vertical-ellipsis {
-  text-align: center;
+  border-color: #FF3D5C;
 }
 
 /*https://stackoverflow.com/questions/2573544/how-can-i-select-all-children-of-an-element-except-the-last-child*/
@@ -84,7 +124,7 @@ be a grid of two columns and one row*/
   text-align: right;
 }
 
-/*The logo will have a height equivalent to that of the header*/
+/*The logo image will have a height equivalent to that of the header*/
 #logo img {
   height: 10vh;
 }
@@ -94,14 +134,16 @@ footer {
   height: 20vh;
 }
 
-/*The title will have no margin*/
-#title h1 {
-  margin: 0;
-}
-
-/*All h1 elements will be large and dynamically sized*/
+/*All h1 elements will be large, 
+dynamically sized, and pink-red*/
 h1 {
   font-size: 2.35vw;
+  color: #FF3D5C;
+}
+
+/*All h3 elements will be pink-red*/
+h3 {
+    color: #FB5C5A;
 }
 
 /*The header will be a grid of three columns and 
@@ -111,13 +153,13 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 10vh;
-
   background-color: #ECE0C4;
 }
 
-/*The self introduction div will have a right border*/
+/*The self introduction div will have a pink-red right border*/
 #self-intro {
   border-right: solid;
+  border-color: #FF3D5C;
 }
 
 /*The last paragraph of the self introduction, portfolio 
@@ -146,13 +188,26 @@ home page sections will be centered*/
   text-align: center;
 }
 
-/*The logo, title, navbar, footer, and skills div
-will have their content vertically and horizontally
-centered*/
-#logo, #title, nav, footer, #skills p {
+/*The logo, header links, footer, skills' 
+paragraphs, and cards will have their 
+content vertically and horizontally centered*/
+#logo, header a, footer, #skills p, .card {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/*The title, which is the middle link in the header,
+will have pink-red left and right borders*/
+.amiddle {
+  border-left: solid;
+  border-right: solid;
+  border-color: #FF3D5C;
+}
+
+/*The title's text will have no margin*/
+.amiddle h1 {
+  margin: 0;
 }
 
 /*The last paragraph in the skills div will have its
@@ -162,17 +217,17 @@ by the `#portfolio-intro p:last-child` rule*/
   margin-bottom: 1em;
 }
 
-/*The footer and second & third home page sections'
-paragraphs will have a small font size and be 
-dynamically sized*/
-footer, #home-section2 p, #home-section3 p {
+/*The footer, second & third home page sections'
+paragraphs, cards, and descriptions will have a small 
+font size and be dynamically sized*/
+footer, #home-section2 p, #home-section3 p, .card, .description p {
   font-size: 1.18vw;
 }
 
 /*The links in the header and footer 
-will be black and not be underlined*/
+will be pink-red and not be underlined*/
 header a, footer a {
-  color: black;
+  color: #FF3D5C;
   text-decoration: none;
 }
 
@@ -202,4 +257,168 @@ columns and three rows*/
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+}
+
+/*The github tutorial embed will have a
+white background, otherwise, it has none*/
+#project4 embed {
+  background-color: white;
+}
+
+/*The contianer holding the cards of projects
+will be a grid of four columns and one row 
+(at first glance)*/
+#project-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+/*The first cards of each column of cards will have some
+margin to give it some distance from the header above it*/
+.col-of-cards .card:first-of-type {
+  margin-top: 5vh;
+}
+
+/*A card will have a pink-red border around it. It's preview
+image and card title will be stacked on top of one another like
+a column. We'll give each card a width that is a little less 
+than a quarter of the viewport's width and have it centered in
+a column of cards. All the cards will have some margin at the 
+bottom to give them vertical distance from one another*/
+.card {
+  border: solid;
+  border-color: #FF3D5C;
+
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 5vh;
+  width: 23vw;
+
+}
+
+/*https://getcssscan.com/css-box-shadow-examples*/
+/*Give cards a light salmon box shadow when it is hovered over*/
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, #F78D76 0px 0px 0px 3px;
+}
+
+/*Have a card's content hold the same width as itself*/
+.preview img, .caption p {
+  width: 23vw;
+}
+
+/*The preview images will have a pink-red bottom border*/
+.preview img {
+  border-bottom: solid;
+  border-color: #FF3D5C;
+}
+
+/*Scrolling to a specified position is set to animate smoothly*/
+html {
+  scroll-behavior: smooth;
+}
+
+/*The card's text will have some bottom padding 
+to make it appear more vertically centered and 
+it will be justified to the center*/
+.caption {
+  padding-bottom: 0.8vh;
+  text-align: center;
+}
+
+/*A project will be a grid of two columns and 
+one row with a pink-red bottom border*/
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  border-bottom: solid;
+  border-color: #FF3D5C;
+}
+
+/*The last project in the my-works 
+webpage will have no bottom border*/
+.project:last-of-type {
+  border-bottom: none;
+}
+
+/*Project descriptions will 
+have pink-red right borders*/
+.description {
+  border-right: solid;
+  border-color: #FF3D5C;
+}
+
+/*embed elements and .pdf containers
+will take up the entirety of their half
+of a project's container*/
+embed, .pdf {
+  width: 100%;
+  height: 100%;
+}
+
+/*iframes will almost take up the entirety 
+of their half of a project's container because
+the pdf viewer has a border that makes the 
+webpage wider than desired*/
+iframe {
+  width: 99%;
+  height: 100%;
+}
+
+/*A pdf container will have a light gray*/
+.pdf {
+  background-color: #EEEEEE;
+}
+
+/*Project titles and creators will be 
+centered in a description container*/
+.description h1, .description h3 {
+  text-align: center;
+}
+
+/*Description h3 elements will be 
+slightly large and be dynamically sized*/
+.description h3 {
+  font-size: 1.4vw;
+}
+
+/*Description paragraphs will be centered in
+the container and take up 90% of its width
+with additional margin at the bottom to match
+that of the project title*/
+.description p {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 1.5em;
+}
+
+/*Pong Remix will have a pistachio background*/
+#project5 embed {
+  background-color: #BDFFB1;
+}
+
+/*Tail on the Turkey will have an orange background*/
+#project6 embed {
+  background-color: #FFA500;
+}
+
+/*Card links and links in paragraphs will 
+be pink-red and not be underlined*/
+.col-of-cards a, p a {
+  text-decoration: none;
+  color: #FF3D5C;
+}
+
+/*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_smooth_scroll*/
+/*https://stackoverflow.com/questions/17534661/make-anchor-link-go-some-pixels-above-where-its-linked-to*/
+/*All the projects will have a scroll top margin of 
+10% the height of the viewport because the navigation
+bar would cover the top of each project otherwise*/
+#project1, #project2, #project3, #project4, 
+#project5, #project6, #project7, #project8, 
+#project9, #project10, #project11, #project12 {
+  scroll-margin-top: 10vh;
 }
