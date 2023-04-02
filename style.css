@@ -4,6 +4,12 @@
 /*For now make everything have the Sanchez font-family*/
 * {
   font-family: 'Sanchez', serif;
+/*  color: #69696E;*/
+/*  color: #69697C;*/
+/*  color: #93697C;*/
+/*  color: #75304F;*/
+/*  color: #93567C;*/
+  color: #913148;
 }
 
 /*Give the website a Yellow Pearl background color and remove whitespace around the page*/
@@ -89,11 +95,14 @@ have a pink-red bottom border*/
   border-color: #FF3D5C;
 }
 
+/*https://stackoverflow.com/questions/2573544/how-can-i-select-all-children-of-an-element-except-the-last-child*/
 /*The second h1 in the first home section
-will have a pink-red top border*/
+will have a pink-red top border and justified
+to the right*/
 #home-section1 h1:last-of-type {
   border-top: solid;
   border-color: #FF3D5C;
+  text-align: right;
 }
 
 /*First home section and container of project cards 
@@ -116,12 +125,6 @@ border and be a grid of two columns and one row*/
 
   border-bottom: solid;
   border-color: #FF3D5C;
-}
-
-/*https://stackoverflow.com/questions/2573544/how-can-i-select-all-children-of-an-element-except-the-last-child*/
-/*The last h1 element in the first home section will be aligned to the right*/
-#home-section1 h1:last-child {
-  text-align: right;
 }
 
 /*The logo image will have a height equivalent to that of the header*/
@@ -157,6 +160,7 @@ header {
 }
 
 /*The self introduction div will have a pink-red right border*/
+/*#home-section2 div:first-of-type {*/
 #self-intro {
   border-right: solid;
   border-color: #FF3D5C;
@@ -172,13 +176,13 @@ elements they contain at the top*/
 
 /*The first div in the second home page section will have
 right padding to match the section's left padding*/
-#home-section2 div:first-child {
+#home-section2 div:first-of-type {
   padding-right: 10vw;
 }
 
 /*The last div in the second home page section will have
 left padding to match the section's right padding*/
-#home-section2 div:last-child {
+#home-section2 div:last-of-type {
   padding-left: 10vw;
 }
 
@@ -208,6 +212,7 @@ will have pink-red left and right borders*/
 /*The title's text will have no margin*/
 .amiddle h1 {
   margin: 0;
+  text-align: center;
 }
 
 /*The last paragraph in the skills div will have its
@@ -235,6 +240,7 @@ header a, footer a {
 large size and be dynamically sized*/
 nav h2 {
   font-size: 1.75vw;
+  color: #FF3D5C;
 }
 
 /*The first and second home page sections 
@@ -306,6 +312,10 @@ bottom to give them vertical distance from one another*/
 /*Have a card's content hold the same width as itself*/
 .preview img, .caption p {
   width: 23vw;
+}
+
+.caption p {
+  color: #FF3D5C;
 }
 
 /*The preview images will have a pink-red bottom border*/
@@ -421,4 +431,68 @@ bar would cover the top of each project otherwise*/
 #project5, #project6, #project7, #project8, 
 #project9, #project10, #project11, #project12 {
   scroll-margin-top: 10vh;
+}
+
+/* Media query (phones, 600px and down) 
+These css properties will continue to be applied
+until the screen surpasses 600 pixels in width */
+@media only screen and (max-width: 600px) {
+
+h1 {
+  font-size: 7vw;
+}
+
+.amiddle h1 {
+  font-size: 4.5vw;
+}
+
+nav h2 {
+  font-size: 4vw;
+}
+
+
+#home-section1 {
+  height: 90vh;
+  background-size: 160%;
+}
+
+#home-section1 h1 {
+/*#home-section1 h1:first-of-type, #home-seciton2 h1:last-of-type  {*/
+  font-size: 7vw;
+}
+
+#home-section2 {
+  display: block;
+  padding: 0;
+  /*padding: 0;
+  margin: 0 10vw;*/
+}
+
+#home-section2 div:first-of-type {
+/*  padding-right: 0;*/
+/*  border: none;*/
+  border-right: none;
+  padding: 0 10vw;
+}
+
+/* The container for the self introduction will have a pink-red
+bottom border, the above css selector couldn't be used because it
+would apply a bottom border to the grid in the portfolio introduction */
+#self-intro {
+  border-bottom: solid;
+}
+
+#home-section2 div:last-of-type {
+/*    padding-left: 0;*/
+    padding: 0 10vw;
+}
+
+footer, #home-section2 p, #home-section3 p {
+  font-size: 3.5vw;
+}
+
+#home-section3 {
+    padding: 0 10vw;
+}
+
 }
