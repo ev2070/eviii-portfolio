@@ -433,6 +433,7 @@ bar would cover the top of each project otherwise*/
   scroll-margin-top: 10vh;
 }
 
+/*https://stackoverflow.com/questions/16647380/max-width-vs-min-width*/
 /* Media query (phones, 600px and down) 
 These css properties will continue to be applied
 until the screen surpasses 600 pixels in width */
@@ -446,7 +447,7 @@ h1 {
   font-size: 4.5vw;
 }
 
-nav h2 {
+nav h2. footer {
   font-size: 4vw;
 }
 
@@ -487,7 +488,7 @@ would apply a bottom border to the grid in the portfolio introduction */
     padding: 0 10vw;
 }
 
-footer, #home-section2 p, #home-section3 p {
+#home-section2 p, #home-section3 p {
   font-size: 3.5vw;
 }
 
