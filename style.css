@@ -1,22 +1,24 @@
 /*Sanchez font*/
 @import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
 
-/*For now make everything have the Sanchez font-family*/
+/*All text will be in the Sanchez font 
+and be in a dark muted purple*/
 * {
   font-family: 'Sanchez', serif;
-/*  color: #69696E;*/
-/*  color: #69697C;*/
-/*  color: #93697C;*/
-/*  color: #75304F;*/
-/*  color: #93567C;*/
   color: #913148;
 }
 
-/*Give the website a Yellow Pearl background color and remove whitespace around the page*/
+/*Give the website a Yellow Pearl background color 
+and remove whitespace around the page*/
 body, html {
   margin: 0;
   padding: 0;
   background-color: #ECE0C4;
+}
+
+/*Scrolling to a specified position is set to animate smoothly*/
+html {
+  scroll-behavior: smooth;
 }
 
 /*https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_layout_named*/
@@ -47,12 +49,22 @@ header, footer {
   border-color: #FF3D5C;
 }
 
-/*Header will be fixed to the top of the webpage*/
+/*Header will be fixed to the top of the webpage 
+and be on top of all other elements. It will also 
+be a grid of three columns and one row (which will 
+be 10% of the height of the viewport) with a Yellow 
+Pearl background*/
 header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 10vh;
+  background-color: #ECE0C4;
 }
 
 /*The first section on the home page (after the header)
@@ -60,9 +72,9 @@ will take up the remaining space of the viewport. It
 will have an illustration as a background which will 
 take up a little more than half of the size of the 
 container and be centered with no repetitions. This
-container will also be a flex box and have it children
+container will also be a flex box and have its children
 flow in a centered column direction with space in 
-between them */
+between them*/
 #home-section1 {
   height: 90vh;
 
@@ -96,9 +108,10 @@ have a pink-red bottom border*/
 }
 
 /*https://stackoverflow.com/questions/2573544/how-can-i-select-all-children-of-an-element-except-the-last-child*/
-/*The second h1 in the first home section
-will have a pink-red top border and justified
-to the right*/
+
+/*The second h1 in the first home 
+section will have a pink-red top 
+border and justified to the right*/
 #home-section1 h1:last-of-type {
   border-top: solid;
   border-color: #FF3D5C;
@@ -149,18 +162,7 @@ h3 {
     color: #FB5C5A;
 }
 
-/*The header will be a grid of three columns and 
-one row (which should be 10% the height of the 
-viewport) and will have a Yellow Pearl background*/
-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 10vh;
-  background-color: #ECE0C4;
-}
-
 /*The self introduction div will have a pink-red right border*/
-/*#home-section2 div:first-of-type {*/
 #self-intro {
   border-right: solid;
   border-color: #FF3D5C;
@@ -174,26 +176,16 @@ elements they contain at the top*/
   margin-bottom: 1.9em;
 }
 
-/*The first div in the second home page section will have
-right padding to match the section's left padding*/
-/*#home-section2 div:first-of-type {*/
+/*The two containers in the second home section will have 
+left and right padding that is 10% of the viewport's width*/
 #self-intro, #portfolio-intro {
   padding: 0 10vw;
-/*  padding-right: 10vw;*/
-/*  width: 28vw;*/
 }
 
+/*The container of skills will have no padding*/
 #skills {
   padding: 0;
 }
-
-/*The last div in the second home page section will have
-left padding to match the section's right padding*/
-/*#home-section2 div:last-of-type {*/
-/*#portfolio-intro {*/
-/*  padding-left: 10vw;*/
-/*  width: 28vw;*/
-/*}*/
 
 /*The h1 elements in the second and third 
 home page sections will be centered*/
@@ -201,9 +193,9 @@ home page sections will be centered*/
   text-align: center;
 }
 
-/*The logo, header links, footer, skills' 
-paragraphs, and cards will have their 
-content vertically and horizontally centered*/
+/*The logo, header links, footer, skills, and
+cards'  paragraphs will have their content 
+vertically and horizontally centered*/
 #logo, header a, footer, #skills p, .card {
   display: flex;
   justify-content: center;
@@ -218,7 +210,7 @@ will have pink-red left and right borders*/
   border-color: #FF3D5C;
 }
 
-/*The title's text will have no margin*/
+/*The title will have no margin but will be centered*/
 .amiddle h1 {
   margin: 0;
   text-align: center;
@@ -234,40 +226,39 @@ by the `#portfolio-intro p:last-child` rule*/
 /*The footer, second & third home page sections'
 paragraphs, cards, and descriptions will have a small 
 font size and be dynamically sized*/
-footer, #home-section2 p, #home-section3 p, .card, .description p {
+footer, #home-section2 p, #home-section3 p, .card p, .description p {
   font-size: 1.18vw;
 }
 
-/*The links in the header and footer 
-will be pink-red and not be underlined*/
-header a, footer a {
+/*The links in the header, footer, cards, and
+paragraphs will be pink-red and not be underlined*/
+header a, footer a, .col-of-cardsV1 a, p a {
   color: #FF3D5C;
   text-decoration: none;
 }
 
-/*The navigation link will have a fairly 
-large size and be dynamically sized*/
+/*The navigation link will have a fairly large 
+size, be dynamically sized, and pink-red*/
 nav h2 {
   font-size: 1.75vw;
   color: #FF3D5C;
 }
 
-/*The first and second home page sections 
-will have padding on their left and right
-of 10% of the viewport's width each*/
+/*The first home page sections will have left and right
+padding which will be 10% of the viewport's width */
 #home-section1 {
   padding: 0 10vw;
 }
 
 /*The third home page section will have 
 padding on its left and right of 30% of
-the viewport's width each*/
+the viewport's width*/
 #home-section3 {
   padding: 0 30vw;
 }
 
-/*The skills div will be a grid of three
-columns and three rows*/
+/*The skills container will be a grid 
+of three columns and three rows*/
 #skills {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -315,10 +306,10 @@ bottom to give them vertical distance from one another*/
   margin: auto;
   margin-bottom: 5vh;
   width: 23vw;
-
 }
 
 /*https://getcssscan.com/css-box-shadow-examples*/
+
 /*Give cards a light salmon box shadow when it is hovered over*/
 .card:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, #F78D76 0px 0px 0px 3px;
@@ -329,6 +320,7 @@ bottom to give them vertical distance from one another*/
   width: 23vw;
 }
 
+/*Captions will be pink-red*/
 .caption p {
   color: #FF3D5C;
 }
@@ -337,11 +329,6 @@ bottom to give them vertical distance from one another*/
 .preview img {
   border-bottom: solid;
   border-color: #FF3D5C;
-}
-
-/*Scrolling to a specified position is set to animate smoothly*/
-html {
-  scroll-behavior: smooth;
 }
 
 /*The card's text will have some bottom padding 
@@ -369,8 +356,11 @@ webpage will have no bottom border*/
   border-bottom: none;
 }
 
-/*Project descriptions will 
-have pink-red right borders*/
+/*Project descriptions will have pink-red 
+right borders and be a flex container with 
+its content acting as a centered column 
+with some left and right padding 10% of
+the viewport's width*/
 .description {
   display: flex;
   flex-direction: column;
@@ -396,11 +386,10 @@ the pdf viewer has a border that makes the
 webpage wider than desired*/
 iframe {
   width: 99%;
-/*  height: 100%;*/
   height: 99%;
 }
 
-/*A pdf container will have a light gray*/
+/*A pdf container will have a light gray background*/
 .pdf {
   background-color: #EEEEEE;
 }
@@ -417,10 +406,8 @@ slightly large and be dynamically sized*/
   font-size: 1.4vw;
 }
 
-/*Description paragraphs will be centered in
-the container and take up 90% of its width
-with additional margin at the bottom to match
-that of the project title*/
+/*Description paragraphs will have a bottom margin
+to space them away from each other*/
 .description p {
 /*  width: 90%;*/
 /*  margin: auto;*/
@@ -437,162 +424,191 @@ that of the project title*/
   background-color: #FFA500;
 }
 
-/*Card links and links in paragraphs will 
-be pink-red and not be underlined*/
-.col-of-cardsV1 a, p a {
-  text-decoration: none;
-  color: #FF3D5C;
-}
-
 /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_smooth_scroll*/
 /*https://stackoverflow.com/questions/17534661/make-anchor-link-go-some-pixels-above-where-its-linked-to*/
+
 /*All the projects will have a scroll top margin of 
-10% the height of the viewport because the navigation
-bar would cover the top of each project otherwise*/
+10% the height of the viewport, otherwise, the 
+navigation bar would cover the top of each project*/
 #project1, #project2, #project3, #project4, 
 #project5, #project6, #project7, #project8, 
 #project9, #project10, #project11, #project12 {
   scroll-margin-top: 10vh;
 }
 
-header {
-  z-index: 1;
-}
-
 /*https://stackoverflow.com/questions/16647380/max-width-vs-min-width*/
+
 /* Media query (phones, 600px and down) 
 These css properties will continue to be applied
 until the screen surpasses 600 pixels in width */
 @media only screen and (max-width: 600px) {
 
-h1 {
-  font-size: 7vw;
-}
+    /*h1 elements will be larger but still responsive*/
+    h1 {
+      font-size: 7vw;
+    }
 
-.amiddle h1 {
-  font-size: 4.5vw;
-}
+    /*The title will be smaller than other h1 
+    elements to better fit inside the header */
+    .amiddle h1 {
+      font-size: 4.5vw;
+    }
 
-nav h2, footer {
-  font-size: 4vw;
-}
+    /*The My Works tab and footer will be the same size
+    and slightly smaller than the title's font size*/
+    nav h2, footer {
+      font-size: 4vw;
+    }
 
-#home-section1 {
-  height: 90vh;
-  background-size: 160%;
-}
+    /*The first home section will take up 90% of the 
+    view port's height and the background illustration
+    will be larger*/
+    #home-section1 {
+      height: 90vh;
+      background-size: 160%;
+    }
 
-#home-section1 h1 {
-/*#home-section1 h1:first-of-type, #home-seciton2 h1:last-of-type  {*/
-  font-size: 7vw;
-}
+    /*The second home section will be 
+    displayed as a block instead of a grid*/
+    #home-section2 {
+      display: block;
+      padding: 0;
+    }
 
-#home-section2 {
-  display: block;
-  padding: 0;
-}
+    /*The self intro container will have no right border, but it 
+    will have left and right padding of 10% of the viewport's width*/
+    #home-section2 div:first-of-type {
+      border-right: none;
+      padding: 0 10vw;
+    }
 
-#home-section2 div:first-of-type {
-  border-right: none;
-  padding: 0 10vw;
-}
+    /* The container for the self introduction will have a pink-red
+    bottom border, the above css selector couldn't be used because it
+    would apply a bottom border to the grid in the portfolio introduction */
+    #self-intro {
+      border-bottom: solid;
+      color: #FF3D5C;
+    }
 
-/* The container for the self introduction will have a pink-red
-bottom border, the above css selector couldn't be used because it
-would apply a bottom border to the grid in the portfolio introduction */
-#self-intro {
-  border-bottom: solid;
-  color: #FF3D5C;
-}
+    /*The portfolio introduction and third home section will 
+    have left and right padding of 10% of the viewport's width*/
+    #home-section2 div:last-of-type, #home-section3 {
+        padding: 0 10vw;
+    }
 
-#home-section2 div:last-of-type {
-    padding: 0 10vw;
-}
+    /* The paragraphs in the second & third home sections and 
+    in the description will be larger */
+    #home-section2 p, #home-section3 p, .description p {
+      font-size: 3.5vw;
+    }
 
-#home-section2 p, #home-section3 p, .description p {
-  font-size: 3.5vw;
-}
+    /* The captions will be slightly smaller than the above paragraphs */
+    .caption p {
+      font-size: 3vw;
+    }
 
-.caption p {
-  font-size: 3vw;
-}
+    /*The laptop version of the project cards container will not be visible*/
+    #project-cardsV1 {
+      display: none;
+    }
 
-#home-section3 {
-    padding: 0 10vw;
-}
+    /*The mobile version of the project cards container will be a grid 
+    of two columns and one row with a pink-red bottom border and some
+    margin on the top to lay beneath the header*/
+    #project-cardsV2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
 
-#project-cardsV1 {
-  display: none;
-}
+      border-bottom: solid;
+      border-color: #FF3D5C;
+      margin-top: 10vh;
+    }
 
-#project-cardsV2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+    /*The mobile version of the column of cards's first cards 
+    will have a top margin of 5% of the viewport's heigth*/
+    .col-of-cardsV2 .card:first-of-type {
+      margin-top: 5vh;
+    }
 
-  border-bottom: solid;
-  border-color: #FF3D5C;
-  margin-top: 10vh;
-}
+    /*The links in the column of cards will 
+    be pink-red and not be underlined*/
+    .col-of-cardsV2 a {
+      text-decoration: none;
+      color: #FF3D5C;
+    }
 
-.col-of-cardsV2 .card:first-of-type {
-  margin-top: 5vh;
-}
+    /*The cards and their content will take up 100%
+    of the column of cards' width*/
+    .card, .preview img, .caption p {
+      width: 100%;
+    }
 
-.col-of-cardsV2 a {
-  text-decoration: none;
-  color: #FF3D5C;
-}
+    /*Captions will have a little bit of bottom padding
+    to make them appear more vertically centered*/
+    .caption {
+      padding-bottom: 0.25vh;
+    }
 
-.card, .preview img, .caption p {
-  width: 100%;
-}
+    /*The first column of cards will have a left margin of 
+    5% of the viewport's width and a right margin of 2.5%*/
+    .col-of-cardsV2:first-of-type {
+      margin-left: 5vw;
+      margin-right: 2.5vw;
+    }
 
-.caption {
-  padding-bottom: 0.25vh;
-}
+    /*The first column of cards will have a left margin of 
+    2.5% of the viewport's width and a right margin of 5%*/
+    .col-of-cardsV2:last-of-type {
+      margin-left: 2.5vw;
+      margin-right: 5vw;
+    }
 
-.col-of-cardsV2:first-of-type {
-  margin-left: 5vw;
-  margin-right: 2.5vw;
-}
+    /*The project creators will be slightly 
+    larger than the project descriptions*/
+    .description h3 {
+      font-size: 3.75vw;
+    }
 
-.col-of-cardsV2:last-of-type {
-  margin-left: 2.5vw;
-  margin-right: 5vw;
-}
+    /*Projects will be a grid of one column and one row*/
+    .project {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
 
-.description h3 {
-  font-size: 3.75vw;
-}
+    /*Embed and iframe elements wil take 
+    up 70% of the viewport's height*/
+    embed, iframe {
+      height: 70vh;
+    }
 
-.project {
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-}
+    /*Descriptions will not have right borders but they will have
+    a pink-red top border and appear after the project itself.
+    They will contain no padding, but will have a width of 80% 
+    of the viewport's width and be centered horizontally*/
+    .description {
+      border-right: none;
+      border-top: solid;
+      border-color: #FF3D5C;
 
-embed, iframe {
-  height: 70vh;
-}
+      order: 1; /*so it will be on top*/
 
-.description {
-  border-right: none;
-  border-top: solid;
-  border-color: #FF3D5C;
+      padding: 0;
+      width: 80vw;
+      margin: auto;
+    }
 
-  order: 1; /*so it will be on top*/
+    /*Project titles will have some top margin to add space 
+    between project descriptions and the project itself*/
+    .description h1 {
+      margin-top: 5vh;
+    }
 
-  padding: 0;
-  width: 80vw;
-  margin: auto;
-}
-
-.description h1 {
-  margin-top: 5vh;
-}
-
-.description p:last-of-type {
-  margin-bottom: 6.5vh;
-}
+    /*The last paragraph in each project description 
+    will have a little greater of a bottom margin 
+    than the top margin of its title*/
+    .description p:last-of-type {
+      margin-bottom: 6.5vh;
+    }
 
 }
