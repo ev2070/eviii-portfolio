@@ -357,7 +357,6 @@ one row with a pink-red bottom border*/
 .project {
   display: grid;
   grid-template-columns: 1fr 1fr;
-/*  grid-template-rows: 1fr;*/
   grid-template-rows: 80vh;
 
   border-bottom: solid;
@@ -561,6 +560,27 @@ would apply a bottom border to the grid in the portfolio introduction */
 
 .description h3 {
   font-size: 3.75vw;
+}
+
+.project {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+embed, iframe {
+  height: 70vh;
+}
+
+.description {
+  border-right: none;
+  border-top: solid;
+  border-color: #FF3D5C;
+
+  order: 1; /*so it will be on top :0*/
+
+  padding: 0;
+  width: 80vw;
+  margin: auto;
 }
 
 }
