@@ -110,7 +110,7 @@ will have a pink-red bottom border and a top margin
 that is equivalent to the height of the header because 
 fixing the header to the top disrupted the flow of 
 the document*/
-#home-section1, #project-cards {
+#home-section1, #project-cardsV1 {
   border-bottom: solid;
   border-color: #FF3D5C;
   margin-top: 10vh;
@@ -176,15 +176,24 @@ elements they contain at the top*/
 
 /*The first div in the second home page section will have
 right padding to match the section's left padding*/
-#home-section2 div:first-of-type {
-  padding-right: 10vw;
+/*#home-section2 div:first-of-type {*/
+#self-intro, #portfolio-intro {
+  padding: 0 10vw;
+/*  padding-right: 10vw;*/
+/*  width: 28vw;*/
+}
+
+#skills {
+  padding: 0;
 }
 
 /*The last div in the second home page section will have
 left padding to match the section's right padding*/
-#home-section2 div:last-of-type {
-  padding-left: 10vw;
-}
+/*#home-section2 div:last-of-type {*/
+/*#portfolio-intro {*/
+/*  padding-left: 10vw;*/
+/*  width: 28vw;*/
+/*}*/
 
 /*The h1 elements in the second and third 
 home page sections will be centered*/
@@ -246,7 +255,7 @@ nav h2 {
 /*The first and second home page sections 
 will have padding on their left and right
 of 10% of the viewport's width each*/
-#home-section1, #home-section2 {
+#home-section1 {
   padding: 0 10vw;
 }
 
@@ -271,18 +280,24 @@ white background, otherwise, it has none*/
   background-color: white;
 }
 
-/*The contianer holding the cards of projects
+/*The container holding the cards of projects
 will be a grid of four columns and one row 
 (at first glance)*/
-#project-cards {
+#project-cardsV1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
 }
 
+/*This is a second version of the project cards
+container and it won't be visible by default*/
+#project-cardsV2 {
+  display: none;
+}
+
 /*The first cards of each column of cards will have some
 margin to give it some distance from the header above it*/
-.col-of-cards .card:first-of-type {
+.col-of-cardsV1 .card:first-of-type {
   margin-top: 5vh;
 }
 
@@ -342,7 +357,8 @@ one row with a pink-red bottom border*/
 .project {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+/*  grid-template-rows: 1fr;*/
+  grid-template-rows: 80vh;
 
   border-bottom: solid;
   border-color: #FF3D5C;
@@ -357,8 +373,14 @@ webpage will have no bottom border*/
 /*Project descriptions will 
 have pink-red right borders*/
 .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   border-right: solid;
   border-color: #FF3D5C;
+
+  padding: 0 10vw;
 }
 
 /*embed elements and .pdf containers
@@ -375,7 +397,8 @@ the pdf viewer has a border that makes the
 webpage wider than desired*/
 iframe {
   width: 99%;
-  height: 100%;
+/*  height: 100%;*/
+  height: 99%;
 }
 
 /*A pdf container will have a light gray*/
@@ -400,8 +423,8 @@ the container and take up 90% of its width
 with additional margin at the bottom to match
 that of the project title*/
 .description p {
-  width: 90%;
-  margin: auto;
+/*  width: 90%;*/
+/*  margin: auto;*/
   margin-bottom: 1.5em;
 }
 
@@ -417,7 +440,7 @@ that of the project title*/
 
 /*Card links and links in paragraphs will 
 be pink-red and not be underlined*/
-.col-of-cards a, p a {
+.col-of-cardsV1 a, p a {
   text-decoration: none;
   color: #FF3D5C;
 }
@@ -483,12 +506,61 @@ would apply a bottom border to the grid in the portfolio introduction */
     padding: 0 10vw;
 }
 
-#home-section2 p, #home-section3 p {
+#home-section2 p, #home-section3 p, .description p {
   font-size: 3.5vw;
+}
+
+.caption p {
+  font-size: 3vw;
 }
 
 #home-section3 {
     padding: 0 10vw;
+}
+
+#project-cardsV1 {
+  display: none;
+}
+
+#project-cardsV2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  border-bottom: solid;
+  border-color: #FF3D5C;
+  margin-top: 10vh;
+}
+
+.col-of-cardsV2 .card:first-of-type {
+  margin-top: 5vh;
+}
+
+.col-of-cardsV2 a {
+  text-decoration: none;
+  color: #FF3D5C;
+}
+
+.card, .preview img, .caption p {
+  width: 100%;
+}
+
+.caption {
+  padding-bottom: 0.25vh;
+}
+
+.col-of-cardsV2:first-of-type {
+  margin-left: 5vw;
+  margin-right: 2.5vw;
+}
+
+.col-of-cardsV2:last-of-type {
+  margin-left: 2.5vw;
+  margin-right: 5vw;
+}
+
+.description h3 {
+  font-size: 3.75vw;
 }
 
 }
