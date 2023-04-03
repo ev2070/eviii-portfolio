@@ -455,6 +455,10 @@ bar would cover the top of each project otherwise*/
   scroll-margin-top: 10vh;
 }
 
+header {
+  z-index: 1;
+}
+
 /*https://stackoverflow.com/questions/16647380/max-width-vs-min-width*/
 /* Media query (phones, 600px and down) 
 These css properties will continue to be applied
@@ -576,11 +580,19 @@ embed, iframe {
   border-top: solid;
   border-color: #FF3D5C;
 
-  order: 1; /*so it will be on top :0*/
+  order: 1; /*so it will be on top*/
 
   padding: 0;
   width: 80vw;
   margin: auto;
+}
+
+.description h1 {
+  margin-top: 5vh;
+}
+
+.description p:last-of-type {
+  margin-bottom: 6.5vh;
 }
 
 }
